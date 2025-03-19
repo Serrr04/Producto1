@@ -1,6 +1,6 @@
 package modelo
 
-class apuesta(
+public class apuesta(
     public var apuestaId: Int,
     public var partidaId: Int,
     public var jugadorId: Int,
@@ -10,54 +10,50 @@ class apuesta(
     public var fichasIniciales: Int,
     public var fichasFinales: Int
 ) {
-
-    // Getters
-    fun getApuestaId(): Int = apuestaId
-
-    fun getPartidaId(): Int = partidaId
-
-    fun getJugadorId(): Int = jugadorId
-
-    fun getNumeroApostado(): Int = numeroApostado
-
-    fun getColorApostado(): String = colorApostado
-
-    fun getFichasApostadas(): Int = fichasApostadas
-
-    fun getFichasIniciales(): Int = fichasIniciales
-
-    fun getFichasFinales(): Int = fichasFinales
-
-    // Setters
-    fun setApuestaId(apuestaId: Int) {
-        this.apuestaId = apuestaId
+    fun realizarApuesta() {
+        println("Apuesta realizada: $fichasApostadas fichas al número $numeroApostado y color $colorApostado")
     }
 
-    fun setPartidaId(partidaId: Int) {
-        this.partidaId = partidaId
+    fun calcularResultado(numeroGanador: Int, colorGanador: String) {
+        val aciertoNumero = numeroApostado == numeroGanador
+        val aciertoColor = colorApostado.equals(colorGanador, ignoreCase = true)
+
+        fichasFinales = when {
+            aciertoNumero -> fichasIniciales + (fichasApostadas * 10)    // Acierta número exacto
+            aciertoColor -> fichasIniciales + fichasApostadas            // Acierta solo el color
+            else -> fichasIniciales - fichasApostadas                    // Pierde la apuesta
+        }
+
+        println("Resultado calculado: Fichas finales = $fichasFinales")
     }
 
-    fun setJugadorId(jugadorId: Int) {
-        this.jugadorId = jugadorId
+    companion object {
+        fun crearTabla(): String {
+            val TABLE_APUESTA = "Apuesta"
+            val COLUMN_APUESTA_ID = "apuestaId"
+            val COLUMN_PARTIDA_ID = "partidaId"
+            val COLUMN_JUGADOR_ID = "jugadorId"
+            val COLUMN_NUMERO_APOSTADO = "numeroApostado"
+            val COLUMN_COLOR_APOSTADO = "colorApostado"
+            val COLUMN_FICHAS_APOSTADAS = "fichasApostadas"
+            val COLUMN_FICHAS_INICIALES = "fichasIniciales"
+            val COLUMN_FICHAS_FINALES = "fichasFinales"
+
+            val CREATE_TABLE_APUESTA = """
+            CREATE TABLE $TABLE_APUESTA (
+                $COLUMN_APUESTA_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                $COLUMN_PARTIDA_ID INTEGER,
+                $COLUMN_JUGADOR_ID INTEGER,
+                $COLUMN_NUMERO_APOSTADO INTEGER,
+                $COLUMN_COLOR_APOSTADO TEXT,
+                $COLUMN_FICHAS_APOSTADAS INTEGER,
+                $COLUMN_FICHAS_INICIALES INTEGER,
+                $COLUMN_FICHAS_FINALES INTEGER
+            )
+            """
+
+            return CREATE_TABLE_APUESTA;
+        }
     }
 
-    fun setNumeroApostado(numeroApostado: Int) {
-        this.numeroApostado = numeroApostado
-    }
-
-    fun setColorApostado(colorApostado: String) {
-        this.colorApostado = colorApostado
-    }
-
-    fun setFichasApostadas(fichasApostadas: Int) {
-        this.fichasApostadas = fichasApostadas
-    }
-
-    fun setFichasIniciales(fichasIniciales: Int) {
-        this.fichasIniciales = fichasIniciales
-    }
-
-    fun setFichasFinales(fichasFinales: Int) {
-        this.fichasFinales = fichasFinales
-    }
 }
