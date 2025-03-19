@@ -60,4 +60,22 @@ class apuesta(
     fun setFichasFinales(fichasFinales: Int) {
         this.fichasFinales = fichasFinales
     }
+
+    fun realizarApuesta() {
+        println("Apuesta realizada: $fichasApostadas fichas al número $numeroApostado y color $colorApostado")
+    }
+
+    fun calcularResultado(numeroGanador: Int, colorGanador: String) {
+        val aciertoNumero = numeroApostado == numeroGanador
+        val aciertoColor = colorApostado.equals(colorGanador, ignoreCase = true)
+
+        fichasFinales = when {
+            aciertoNumero -> fichasIniciales + (fichasApostadas * 10)    // Acierta número exacto
+            aciertoColor -> fichasIniciales + fichasApostadas            // Acierta solo el color
+            else -> fichasIniciales - fichasApostadas                    // Pierde la apuesta
+        }
+
+        println("Resultado calculado: Fichas finales = $fichasFinales")
+    }
+
 }
