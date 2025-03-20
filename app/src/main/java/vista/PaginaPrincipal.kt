@@ -19,13 +19,13 @@ class PaginaPrincipal : AppCompatActivity() {
             findViewById<Button>(R.id.botonSalir)
         )
 
-        // Asignar el mismo listener a todos los botones (dentro de onCreate)
+        // Cada boton tiene un Listener, dependiendo del id del botón el SceneManager cargará una escena u otra
         botones.forEach { boton ->
             boton.setOnClickListener { view ->
                 when (view.id) {
-                    R.id.botonJugar -> SceneManager.loadScene(context, "Ruleta")
-                    R.id.botonOpciones -> SceneManager.loadScene(context = Context, "Opciones")
-                    R.id.botonSalir -> finish()  // <- Cambié `Exit;` por `finish()` que es la forma correcta de cerrar una actividad
+                    R.id.botonJugar -> SceneManager.loadScene(this, "Ruleta")
+                    R.id.botonOpciones -> SceneManager.loadScene(this, "Opciones")
+                    R.id.botonSalir -> finish()
                 }
             }
         }
