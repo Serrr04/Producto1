@@ -10,41 +10,30 @@ class partida(
     public var fecha: Date,
     public var intentos: Int
 ) {
-    // Getters
-    fun getPartidaId(): Int = partidaId
 
-    fun getJugadorId(): Int = jugadorId
+    companion object {
+        fun crearTabla(): String {
+            val TABLE_PARTIDA = "Partida"
+            val COLUMN_PARTIDA_ID = "partidaId"
+            val COLUMN_JUGADOR_ID = "jugadorId"
+            val COLUMN_FICHAS_INICIALES = "fichasIniciales"
+            val COLUMN_FICHAS_FINALES = "fichasFinales"
+            val COLUMN_FECHA= "fecha"
+            val COLUMN_INTENTOS = "intentos"
 
-    fun getFichasIniciales(): Int = fichasIniciales
+            val CREATE_TABLE_PARTIDA = """
+            CREATE TABLE $TABLE_PARTIDA (
+                $COLUMN_PARTIDA_ID INTEGER,
+                $COLUMN_JUGADOR_ID INTEGER,
+                $COLUMN_FICHAS_INICIALES INTEGER,
+                $COLUMN_FICHAS_FINALES INTEGER,
+                $COLUMN_FECHA DATE,
+                $COLUMN_INTENTOS INTEGER
+            )
+            """
 
-    fun getFichasFinales(): Int = fichasFinales
+            return CREATE_TABLE_PARTIDA;
 
-    fun getFecha(): Date = fecha
-
-    fun getIntentos(): Int = intentos
-
-    // Setters
-    fun setPartidaId(partidaId: Int) {
-        this.partidaId = partidaId
-    }
-
-    fun setJugadorId(jugadorId: Int) {
-        this.jugadorId = jugadorId
-    }
-
-    fun setFichasIniciales(fichasIniciales: Int) {
-        this.fichasIniciales = fichasIniciales
-    }
-
-    fun setFichasFinales(fichasFinales: Int) {
-        this.fichasFinales = fichasFinales
-    }
-
-    fun setFecha(fecha: Date) {
-        this.fecha = fecha
-    }
-
-    fun setIntentos(intentos: Int) {
-        this.intentos = intentos
+        }
     }
 }

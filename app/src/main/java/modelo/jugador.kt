@@ -5,23 +5,23 @@ class jugador (
     public var nombre: String,
     public var fichasFinales: Int
 ){
-    // Getters
-    fun getJugadorId(): Int = jugadorId
+    companion object {
+        fun crearTabla(): String {
+            val TABLE_JUGADOR = "Jugador"
+            val COLUMN_JUGADOR_ID = "jugadorId"
+            val COLUMN_NOMBRE = "nombre"
+            val COLUMN_FICHAS_FINALES = "fichasFinales"
 
-    fun getNombre(): String = nombre
+            val CREATE_TABLE_JUGADOR = """
+            CREATE TABLE $TABLE_JUGADOR (
+                $COLUMN_JUGADOR_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                $COLUMN_NOMBRE TEXT,
+                $COLUMN_FICHAS_FINALES INTEGER
+            )
+            """
 
-    fun getFichasFinales(): Int = fichasFinales
+            return CREATE_TABLE_JUGADOR
 
-    // Setters
-    fun setJugadorId(jugadorId: Int) {
-        this.jugadorId = jugadorId
-    }
-
-    fun setNombre(nombre: String) {
-        this.nombre = nombre
-    }
-
-    fun setFichasFinales(fichasFinales: Int) {
-        this.fichasFinales = fichasFinales
+        }
     }
 }
