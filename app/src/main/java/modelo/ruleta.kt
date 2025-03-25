@@ -12,17 +12,23 @@ class ruleta(
             else -> "desconocido" // En caso de error
         }
 
-    // Getters
-    fun getRuletaId(): Int = ruletaId
 
-    fun getNumero(): Int = numero
+    companion object {
+        fun crearTabla(): String {
+            val TABLE_RULETA = "Ruleta"
+            val COLUMN_RULETA_ID = "apuestaId"
+            val COLUMN_NUMERO = "numero"
+            val COLUMN_COLOR = "color"
 
-    // Setters
-    fun setRuletaId(ruletaId: Int) {
-        this.ruletaId = ruletaId
-    }
+            val CREATE_TABLE_RULETA = """
+            CREATE TABLE $TABLE_RULETA (
+                $COLUMN_RULETA_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                $COLUMN_NUMERO INTEGER,
+                $COLUMN_COLOR TEXT,
+            )
+            """
 
-    fun setNumero(numero: Int) {
-        this.numero = numero
+            return CREATE_TABLE_RULETA
+        }
     }
 }
