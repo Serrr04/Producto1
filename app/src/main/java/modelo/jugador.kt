@@ -1,9 +1,9 @@
 package modelo
 
 class jugador (
-    public var jugadorId: Int,
-    public var nombre: String,
-    public var fichasFinales: Int
+    private var jugadorId: Int,
+    private var nombre: String,
+    private var fichasFinales: Int
 ){
     // Getters
     fun getJugadorId(): Int = jugadorId

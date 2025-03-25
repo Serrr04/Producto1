@@ -1,8 +1,8 @@
 package modelo
 
 class ruleta(
-    public var ruletaId: Int,
-    public var numero: Int
+    private var ruletaId: Int,
+    private var numero: Int
 ) {
     // Metodo para asignar el color a los numeros: rojo = impar, negro = par, 0 = verde
     val color: String

@@ -1,14 +1,14 @@
 package modelo
 
 class apuesta(
-    public var apuestaId: Int,
-    public var partidaId: Int,
-    public var jugadorId: Int,
-    public var numeroApostado: Int,
-    public var colorApostado: String,
-    public var fichasApostadas: Int,
-    public var fichasIniciales: Int,
-    public var fichasFinales: Int
+    private var apuestaId: Int,
+    private var partidaId: Int,
+    private var jugadorId: Int,
+    private var numeroApostado: Int,
+    private var colorApostado: String,
+    private var fichasApostadas: Int,
+    private var fichasIniciales: Int,
+    private var fichasFinales: Int
 ) {
 
     // Getters

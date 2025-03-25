@@ -3,12 +3,12 @@ package modelo
 import java.util.Date
 
 class partida(
-    public var partidaId: Int,
-    public var jugadorId: Int,
-    public var fichasIniciales: Int,
-    public var fichasFinales: Int,
-    public var fecha: Date,
-    public var intentos: Int
+    private var partidaId: Int,
+    private var jugadorId: Int,
+    private var fichasIniciales: Int,
+    private var fichasFinales: Int,
+    private var fecha: Date,
+    private var intentos: Int
 ) {
     // Getters
     fun getPartidaId(): Int = partidaId
