@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
@@ -10,20 +11,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Producto1"
-        tools:targetApi="31">
+        android:theme="@style/Theme.AppCompat">
+
+        <!-- MainActivity -->
         <activity
-            android:name="vista.PaginaPrincipal"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.Ruleta"
-            tools:ignore="Instantiatable,MissingClass">
+            android:name="controlador.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- PlayActivity  -->
+        <activity
+            android:name="modelo.PlayActivity"
+            android:theme="@style/Theme.AppCompat" />
+
     </application>
 
 </manifest>
