@@ -1,25 +1,52 @@
-package modelo
+package com.example.producto1
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.example.producto1.R
+import controlador.ApuestaController
+import database.DatabaseHelper
+import modelo.Apuesta
+import modelo.Jugador
 import kotlin.random.Random
 
 class PlayActivity : AppCompatActivity() {
+
     private var currentRotation = 0f // Mantiene el ángulo actual de la ruleta
+    private lateinit var apuestaController: ApuestaController
+    private lateinit var jugador: Jugador // Asumimos que tenemos un jugador ya cargado
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.play_activity)
 
+        // Inicializamos el DatabaseHelper y ApuestaController
+        val dbHelper = DatabaseHelper(this)
+        apuestaController = ApuestaController(dbHelper)
+
+        // Supongamos que cargamos un jugador de la base de datos
+        jugador = Jugador(1, "Juan", 1000) // Ejemplo de jugador
+
         val roulette: ImageView = findViewById(R.id.roulette)
         val spinButton: Button = findViewById(R.id.button_spin)
 
         spinButton.setOnClickListener {
-            spinRoulette(roulette)
+            // Aquí podemos realizar la apuesta del jugador antes de girar la ruleta
+            val numeroApostado = 7 // Ejemplo de número apostado
+            val colorApostado = "Rojo" // Ejemplo de color apostado
+            val fichasApostadas = 100 // Ejemplo de fichas apostadas
+
+            // Realizamos la apuesta
+            val apuestaRealizada = apuestaController.realizarApuesta(jugador, numeroApostado, colorApostado, fichasApostadas)
+
+            // Comprobamos si la apuesta fue realizada correctamente
+            if (apuestaRealizada) {
+                spinRoulette(roulette)
+            } else {
+                Toast.makeText(this, "No tienes suficientes fichas para esta apuesta", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -66,6 +93,21 @@ class PlayActivity : AppCompatActivity() {
 
     private fun showResult(number: Int, color: String) {
         val resultMessage = "La ruleta cayó en el número $number, Color: $color"
+
+        // Verificamos si el jugador ganó
+        val apuesta = apuestaController.obtenerApuestasPorJugador(jugador.jugadorId).blockingFirst()
+        val apuestaRealizada = apuesta.firstOrNull { it.numeroApostado == number && it.colorApostado == color }
+
+        if (apuestaRealizada != null) {
+            // El jugador ganó
+            jugador.fichasFinales += apuestaRealizada.fichasApostadas * 2 // Apuesta a color o número
+            // DatabaseHelper.updateEntity(jugador) => No sé si hace falta actualizar el Jugador? lo dejo comentado por si acaso
+            Toast.makeText(this, "¡Ganaste! Ahora tienes ${jugador.fichasFinales} fichas", Toast.LENGTH_SHORT).show()
+        } else {
+            // El jugador perdió
+            Toast.makeText(this, "¡Perdiste! Ahora tienes ${jugador.fichasFinales} fichas", Toast.LENGTH_SHORT).show()
+        }
+
         AlertDialog.Builder(this)
             .setTitle("Resultado")
             .setMessage(resultMessage)
