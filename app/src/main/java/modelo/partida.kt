@@ -1,39 +1,30 @@
 package modelo
 
-import java.util.Date
+import androidx.room.*
+import io.reactivex.rxjava3.core.Flowable
 
-class partida(
-    private var partidaId: Int,
-    private var jugadorId: Int,
-    private var fichasIniciales: Int,
-    private var fichasFinales: Int,
-    private var fecha: Date,
-    private var intentos: Int
-) {
+@Entity(tableName = "partidas")
+data class Partida(
+    @PrimaryKey(autoGenerate = true)
+    val partidaId: Int = 0,
+    val jugadorId: Int,
+    val fichasIniciales: Int,
+    val fichasFinales: Int,
+    val fecha: String,  // Cambié a String para simplificar, ya que Room no soporta Date directamente
+    val intentos: Int
+)
 
-    companion object {
-        fun crearTabla(): String {
-            val TABLE_PARTIDA = "Partida"
-            val COLUMN_PARTIDA_ID = "partidaId"
-            val COLUMN_JUGADOR_ID = "jugadorId"
-            val COLUMN_FICHAS_INICIALES = "fichasIniciales"
-            val COLUMN_FICHAS_FINALES = "fichasFinales"
-            val COLUMN_FECHA= "fecha"
-            val COLUMN_INTENTOS = "intentos"
+@Dao
+interface PartidaDao {
+    @Insert
+    fun insertPartida(partida: Partida)
 
-            val CREATE_TABLE_PARTIDA = """
-            CREATE TABLE $TABLE_PARTIDA (
-                $COLUMN_PARTIDA_ID INTEGER,
-                $COLUMN_JUGADOR_ID INTEGER,
-                $COLUMN_FICHAS_INICIALES INTEGER,
-                $COLUMN_FICHAS_FINALES INTEGER,
-                $COLUMN_FECHA DATE,
-                $COLUMN_INTENTOS INTEGER
-            )
-            """
+    @Query("SELECT * FROM partidas WHERE partidaId = :id")
+    fun getPartidaById(id: Int): Flowable<Partida>
 
-            return CREATE_TABLE_PARTIDA;
+    @Update
+    fun updatePartida(partida: Partida)
 
-        }
-    }
+    @Delete
+    fun deletePartida(partida: Partida)
 }

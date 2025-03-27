@@ -1,34 +1,34 @@
 package modelo
 
-class ruleta(
-    private var ruletaId: Int,
-    private var numero: Int
+import androidx.room.*
+import io.reactivex.rxjava3.core.Flowable
+
+@Entity(tableName = "ruletas")
+data class Ruleta(
+    @PrimaryKey(autoGenerate = true)
+    val ruletaId: Int = 0,
+    val numero: Int
 ) {
-    // Metodo para asignar el color a los numeros: rojo = impar, negro = par, 0 = verde
+    // Método para asignar el color a los números: rojo = impar, negro = par, 0 = verde
     val color: String
         get() = when (numero) {
             0 -> "verde"
             in 1..36 -> if (numero % 2 == 0) "negro" else "rojo"
             else -> "desconocido" // En caso de error
         }
+}
 
+@Dao
+interface RuletaDao {
+    @Insert
+    fun insertRuleta(ruleta: Ruleta)
 
-    companion object {
-        fun crearTabla(): String {
-            val TABLE_RULETA = "Ruleta"
-            val COLUMN_RULETA_ID = "apuestaId"
-            val COLUMN_NUMERO = "numero"
-            val COLUMN_COLOR = "color"
+    @Query("SELECT * FROM ruletas WHERE ruletaId = :id")
+    fun getRuletaById(id: Int): Flowable<Ruleta>
 
-            val CREATE_TABLE_RULETA = """
-            CREATE TABLE $TABLE_RULETA (
-                $COLUMN_RULETA_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                $COLUMN_NUMERO INTEGER,
-                $COLUMN_COLOR TEXT,
-            )
-            """
+    @Update
+    fun updateRuleta(ruleta: Ruleta)
 
-            return CREATE_TABLE_RULETA
-        }
-    }
+    @Delete
+    fun deleteRuleta(ruleta: Ruleta)
 }
