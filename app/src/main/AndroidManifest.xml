@@ -28,6 +28,7 @@
             android:name="modelo.PlayActivity"
             android:theme="@style/Theme.AppCompat" />
 
+
     </application>
 
 </manifest>
