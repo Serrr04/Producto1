@@ -1,9 +1,9 @@
 package modelo
 
-class jugador (
-    private var jugadorId: Int,
-    private var nombre: String,
-    private var fichasFinales: Int
+data class jugador (
+    val jugadorId: Int,
+    val nombre: String,
+    val fichasFinales: Int
 ){
     companion object {
         fun crearTabla(): String {

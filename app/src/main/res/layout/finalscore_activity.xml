@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondopantallaverde"
+    android:gravity="bottom|center"
+    android:orientation="vertical">
+
+<Button
+        android:id="@+id/button_volverajugar"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/black"
+        android:text="Volver a jugar"
+        android:textAlignment="center"
+        android:textColor="#FFFEFE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteY="521dp" />
+
+    <Button
+        android:id="@+id/button_verranking"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="75dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/black"
+        android:text="Ver ranking"
+        android:textAlignment="center"
+        android:textColor="#FFFEFE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_volverajugar"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_salir"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@android:color/system_neutral1_600"
+        android:text="Salir"
+        android:textAlignment="center"
+        android:textColor="#FFFEFE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_verranking"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="HardcodedText,MissingConstraints,NewApi" />
+
+    <TextView
+        android:id="@+id/text_puntuacionFinal"
+        android:layout_width="290dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="61dp"
+        android:text="Puntuación final"
+        android:textAlignment="center"
+        android:textColor="#FFFEFE"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="282dp"
+        android:layout_height="198dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="111dp"
+        android:background="#E08AAF8A"
+        app:layout_constraintBottom_toTopOf="@+id/button_volverajugar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_puntuacionFinal"
+        app:layout_constraintVertical_bias="0.518"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_introNombre"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#2B752F"
+        android:gravity="center"
+        android:text="Introduce tu nombre:"
+        android:textAlignment="center"
+        android:textColor="#FFFEFE"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,MissingConstraints,SpUsage"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+
+    <EditText
+        android:id="@+id/editTextLetrasNumeros"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:hint="@null"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textAlignment="center"
+        android:textColor="#FFFEFE"
+        android:textSize="16sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="94dp"
+        tools:layout_editor_absoluteY="239dp" />
+
+    <Button
+        android:id="@+id/button_guardar"
+        android:layout_width="167dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#2B752F"
+        android:text="Guardar"
+        android:textAlignment="center"
+        android:textColor="#FFFEFE"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="304dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
 
-        <!-- MainActivity -->
         <activity
             android:name="controlador.MainActivity"
             android:exported="true">
@@ -23,7 +22,6 @@
             </intent-filter>
         </activity>
 
-        <!-- PlayActivity  -->
         <activity
             android:name="modelo.PlayActivity"
             android:theme="@style/Theme.AppCompat" />

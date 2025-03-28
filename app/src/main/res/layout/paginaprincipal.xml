@@ -15,8 +15,8 @@
         android:scaleType="centerInside"
         app:srcCompat="@drawable/ruleta"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-37dp"
-        tools:layout_editor_absoluteY="3dp" />
+        tools:layout_editor_absoluteX="-66dp"
+        tools:layout_editor_absoluteY="2dp" />
 
     <Button
         android:id="@+id/botonJugar"
