@@ -23,7 +23,7 @@
         </activity>
 
         <activity
-            android:name="modelo.PlayActivity"
+            android:name="controlador.PlayActivity"
             android:theme="@style/Theme.AppCompat" />
 
     </application>

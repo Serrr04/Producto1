@@ -1,4 +1,4 @@
-package modelo
+package controlador
 
 import android.os.Bundle
 import android.widget.Button

@@ -2,7 +2,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.producto1.R
-import modelo.ruleta
+import modelo.Ruleta
 import vista.SceneManager
 import vista.vistaOpciones
 import vista.vistaRuleta

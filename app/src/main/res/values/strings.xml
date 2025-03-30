@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Producto1</string>
+    <string name="app_name">AzarGAmes</string>
 
     <string name="title_activity_settings">SettingsActivity</string>
 
@@ -17,6 +17,59 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="nombre">nombre</string>
+    <string name="nombre">Nombre</string>
+    <string name="btn_jugar">Jugar</string>
+    <string name="btn_opciones">Opciones</string>
+    <string name="btn_salir">Salir</string>
+    <string name="img_ruleta">Imagen de una ruleta de apuestas</string>
+    <string name="brillo">Brillo</string>
+    <string name="opciones">Opciones</string>
+    <string name="volumen">Volumen</string>
+    <string name="silenciar_m_sica">Silenciar Música</string>
+    <string name="volver_a_inicio">Volver a inicio</string>
+    <string name="rojo">Rojo</string>
+    <string name="_0">0</string>
+    <string name="_1">1</string>
+    <string name="_3">3</string>
+    <string name="fichas_disponibles">Fichas Disponibles:</string>
+    <string name="Sumar">+</string>
+    <string name="Restar">-</string>
+    <string name="girar_ruleta">Girar Ruleta</string>
+    <string name="_35">35</string>
+    <string name="_33">33</string>
+    <string name="_31">31</string>
+    <string name="_29">29</string>
+    <string name="_27">27</string>
+    <string name="_25">25</string>
+    <string name="_23">23</string>
+    <string name="_21">21</string>
+    <string name="_17">17</string>
+    <string name="_15">15</string>
+    <string name="_13">13</string>
+    <string name="_11">11</string>
+    <string name="_9">9</string>
+    <string name="_7">7</string>
+    <string name="_19">19</string>
+    <string name="_6">6</string>
+    <string name="_8">8</string>
+    <string name="_10">10</string>
+    <string name="_12">12</string>
+    <string name="_14">14</string>
+    <string name="_16">16</string>
+    <string name="_18">18</string>
+    <string name="_20">20</string>
+    <string name="_22">22</string>
+    <string name="_24">24</string>
+    <string name="_26">26</string>
+    <string name="_28">28</string>
+    <string name="_32">32</string>
+    <string name="_30">30</string>
+    <string name="_34">34</string>
+    <string name="negro">Negro</string>
+    <string name="_36">36</string>
+    <string name="_5">5</string>
+    <string name="_4">4</string>
+    <string name="_2">2</string>
+
 
 </resources>

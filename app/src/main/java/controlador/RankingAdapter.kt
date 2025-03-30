@@ -1,4 +1,4 @@
-package modelo
+package controlador
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import modelo.jugador
+import modelo.Jugador
 import com.example.producto1.R
 
-class RankingAdapter(private val context: Context, private val jugadores: List<jugador>) : BaseAdapter() {
+class RankingAdapter(private val context: Context, private val jugadores: List<Jugador>) : BaseAdapter() {
 
     override fun getCount(): Int = jugadores.size
 

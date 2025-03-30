@@ -1,13 +1,12 @@
-package modelo
+package controlador
 
 import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import modelo.RankingAdapter
-import modelo.jugador
+import modelo.Jugador
 import com.example.producto1.R
-import modelo.DatabaseHelper // poner nombre y ruta correcta de bbdd para solucionar error
+import database.DatabaseHelper
 
 class RankingActivity : AppCompatActivity() {
     private lateinit var listView: ListView
@@ -27,8 +26,8 @@ class RankingActivity : AppCompatActivity() {
         listView.adapter = adapter
     }
 
-    private fun obtenerRanking(): List<jugador> {
-        val jugadores = mutableListOf<jugador>()
+    private fun obtenerRanking(): List<Jugador> {
+        val jugadores = mutableListOf<Jugador>()
         val cursor = database.rawQuery(
             "SELECT * FROM Jugador ORDER BY fichasFinales DESC LIMIT 5",
             null
@@ -39,7 +38,7 @@ class RankingActivity : AppCompatActivity() {
                 val id = cursor.getInt(cursor.getColumnIndexOrThrow("jugadorId"))
                 val nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre"))
                 val fichasFinales = cursor.getInt(cursor.getColumnIndexOrThrow("fichasFinales"))
-                jugadores.add(jugador(id, nombre, fichasFinales))
+                jugadores.add(Jugador(id, nombre, fichasFinales))
             } while (cursor.moveToNext())
         }
         cursor.close()

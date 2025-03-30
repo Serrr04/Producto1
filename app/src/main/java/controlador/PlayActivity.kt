@@ -1,4 +1,4 @@
-package com.example.producto1
+package controlador
 
 import android.os.Bundle
 import android.widget.Button
@@ -6,9 +6,8 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import controlador.ApuestaController
+import com.example.producto1.R
 import database.DatabaseHelper
-import modelo.Apuesta
 import modelo.Jugador
 import kotlin.random.Random
 
@@ -114,4 +113,9 @@ class PlayActivity : AppCompatActivity() {
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
             .show()
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
 }
