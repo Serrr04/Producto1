@@ -1,59 +1,46 @@
 package modelo
 
-class apuesta(
-    private var apuestaId: Int,
-    private var partidaId: Int,
-    private var jugadorId: Int,
-    private var numeroApostado: Int,
-    private var colorApostado: String,
-    private var fichasApostadas: Int,
-    private var fichasIniciales: Int,
-    private var fichasFinales: Int
-) {
-    fun realizarApuesta() {
-        println("Apuesta realizada: $fichasApostadas fichas al número $numeroApostado y color $colorApostado")
-    }
+import android.content.Context
+import androidx.room.*
+import androidx.room.Entity
+import androidx.room.RoomDatabase
+import androidx.appcompat.app.AppCompatActivity
+import io.reactivex.rxjava3.core.Flowable
 
-    fun calcularResultado(numeroGanador: Int, colorGanador: String) {
-        val aciertoNumero = numeroApostado == numeroGanador
-        val aciertoColor = colorApostado.equals(colorGanador, ignoreCase = true)
+@Entity(tableName = "apuestas")
+data class Apuesta(
+    @PrimaryKey(autoGenerate = true)
+    val apuestaId: Int = 0,
+    val partidaId: Int,
+    val jugadorId: Int,
+    val numeroApostado: Int,
+    val colorApostado: String,
+    val fichasApostadas: Int,
+    val fichasIniciales: Int,
+    val fichasFinales: Int
+)
 
-        fichasFinales = when {
-            aciertoNumero -> fichasIniciales + (fichasApostadas * 10)    // Acierta número exacto
-            aciertoColor -> fichasIniciales + fichasApostadas            // Acierta solo el color
-            else -> fichasIniciales - fichasApostadas                    // Pierde la apuesta
-        }
+@Dao
+interface ApuestaDao {
+    @Query("SELECT * FROM apuestas WHERE jugadorId = :jugadorId")
+    fun getApuestasByJugador(jugadorId: Int): Flowable<List<Apuesta>>
 
-        println("Resultado calculado: Fichas finales = $fichasFinales")
-    }
+    @Insert
+    fun insertApuesta(apuesta: Apuesta)
 
-    companion object {
-        fun crearTabla(): String {
-            val TABLE_APUESTA = "Apuesta"
-            val COLUMN_APUESTA_ID = "apuestaId"
-            val COLUMN_PARTIDA_ID = "partidaId"
-            val COLUMN_JUGADOR_ID = "jugadorId"
-            val COLUMN_NUMERO_APOSTADO = "numeroApostado"
-            val COLUMN_COLOR_APOSTADO = "colorApostado"
-            val COLUMN_FICHAS_APOSTADAS = "fichasApostadas"
-            val COLUMN_FICHAS_INICIALES = "fichasIniciales"
-            val COLUMN_FICHAS_FINALES = "fichasFinales"
+    @Query("SELECT COUNT(*) FROM apuestas WHERE jugadorId = :jugadorId AND colorApostado = :color")
+    fun getApuestasPorColor(jugadorId: Int, color: String): Flowable<Int>
 
-            val CREATE_TABLE_APUESTA = """
-            CREATE TABLE $TABLE_APUESTA (
-                $COLUMN_APUESTA_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                $COLUMN_PARTIDA_ID INTEGER,
-                $COLUMN_JUGADOR_ID INTEGER,
-                $COLUMN_NUMERO_APOSTADO INTEGER,
-                $COLUMN_COLOR_APOSTADO TEXT,
-                $COLUMN_FICHAS_APOSTADAS INTEGER,
-                $COLUMN_FICHAS_INICIALES INTEGER,
-                $COLUMN_FICHAS_FINALES INTEGER
-            )
-            """
+    @Query("SELECT COUNT(*) FROM apuestas WHERE jugadorId = :jugadorId AND numeroApostado = :numero")
+    fun getApuestasPorNumero(jugadorId: Int, numero: Int): Flowable<Int>
 
-            return CREATE_TABLE_APUESTA;
-        }
-    }
+    @Query("SELECT SUM(fichasApostadas) FROM apuestas WHERE jugadorId = :jugadorId")
+    fun getTotalFichasApostadas(jugadorId: Int): Flowable<Int>
 
+    @Update
+    fun updateApuesta(apuesta: Apuesta)
+
+    @Delete
+    fun deleteApuesta(entity: Apuesta)
 }
+
