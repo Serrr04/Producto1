@@ -636,17 +636,17 @@
         android:id="@+id/botonGirar"
         android:layout_width="wrap_content"
         android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#0F3610"
         android:text="@string/girar_ruleta"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@id/botonRestar"
-        app:layout_constraintTop_toBottomOf="@id/boton35"
-        app:layout_constraintEnd_toStartOf="@id/botonSumar"
         app:layout_constraintBottom_toStartOf="@id/fichas"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintHorizontal_bias="0.5"/>
+        app:layout_constraintEnd_toStartOf="@id/botonSumar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/botonRestar"
+        app:layout_constraintTop_toBottomOf="@id/boton35" />
 
     <!-- Botón Restar -->
     <Button
