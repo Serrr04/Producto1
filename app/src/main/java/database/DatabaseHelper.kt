@@ -1,6 +1,7 @@
 package database
 
 import android.content.Context
+import android.database.sqlite.SQLiteDatabase
 import androidx.room.Database as db
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -41,6 +42,10 @@ abstract class Database : RoomDatabase() {
 
 class DatabaseHelper(private val context: Context) {
 
+    val readableDatabase: SQLiteDatabase
+        get() {
+            TODO()
+        }
     private val db: Database = Database.getDatabase(context)
 
     // Metodos CRUD

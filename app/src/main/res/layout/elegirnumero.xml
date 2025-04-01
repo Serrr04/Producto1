@@ -5,478 +5,695 @@
     android:id="@+id/linearLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#262525"
-    android:orientation="horizontal" >
+    android:background="#262525" >
 
+    <!-- Botón 0 -->
     <Button
-        android:id="@+id/button0"
+        android:id="@+id/boton0"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo_verde"
-        android:text="0"
+        android:text="@string/_0"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="104dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/boton1"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón 1 -->
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/boton1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo_rojo"
-        android:text="1"
+        android:text="@string/_1"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="104dp" />
+        app:layout_constraintStart_toEndOf="@id/boton0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/boton2"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón 2 -->
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/boton2"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo_negro"
-        android:text="2"
+        android:text="@string/_2"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="104dp" />
+        app:layout_constraintStart_toEndOf="@id/boton1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/boton3"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón 3 -->
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/boton3"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo_rojo"
-        android:text="3"
+        android:text="@string/_3"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="104dp" />
+        app:layout_constraintStart_toEndOf="@id/boton2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/boton4"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón 4 -->
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/boton4"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo_negro"
-        android:text="4"
+        android:text="@string/_4"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="104dp" />
+        app:layout_constraintStart_toEndOf="@id/boton3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintHorizontal_bias="1.0"/>
 
+    <!-- Botón 5 -->
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/boton5"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo_rojo"
-        android:text="5"
+        android:text="@string/_5"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="180dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton0"
+        app:layout_constraintEnd_toStartOf="@id/boton6"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón 6 -->
     <Button
-        android:id="@+id/button28"
+        android:id="@+id/boton6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_6"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton5"
+        app:layout_constraintTop_toBottomOf="@id/boton1"
+        app:layout_constraintEnd_toStartOf="@id/boton7"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 7 -->
+    <Button
+        android:id="@+id/boton7"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo_rojo"
-        android:text="36"
+        android:text="@string/_7"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="216dp"
-        tools:layout_editor_absoluteY="597dp" />
+        app:layout_constraintStart_toEndOf="@id/boton6"
+        app:layout_constraintTop_toBottomOf="@id/boton2"
+        app:layout_constraintEnd_toStartOf="@id/boton8"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón 8 -->
     <Button
-        android:id="@+id/button29"
+        android:id="@+id/boton8"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_8"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton7"
+        app:layout_constraintTop_toBottomOf="@id/boton3"
+        app:layout_constraintEnd_toStartOf="@id/boton9"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 9 -->
+    <Button
+        android:id="@+id/boton9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_9"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton8"
+        app:layout_constraintTop_toBottomOf="@id/boton4"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- Botón 10 -->
+    <Button
+        android:id="@+id/boton10"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_10"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton5"
+        app:layout_constraintEnd_toStartOf="@id/boton11"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 11 -->
+    <Button
+        android:id="@+id/boton11"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_11"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton10"
+        app:layout_constraintTop_toBottomOf="@id/boton6"
+        app:layout_constraintEnd_toStartOf="@id/boton12"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 12 -->
+    <Button
+        android:id="@+id/boton12"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_12"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton11"
+        app:layout_constraintTop_toBottomOf="@id/boton7"
+        app:layout_constraintEnd_toStartOf="@id/boton13"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 13 -->
+    <Button
+        android:id="@+id/boton13"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_13"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton12"
+        app:layout_constraintTop_toBottomOf="@id/boton8"
+        app:layout_constraintEnd_toStartOf="@id/boton14"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 14 -->
+    <Button
+        android:id="@+id/boton14"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_14"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton13"
+        app:layout_constraintTop_toBottomOf="@id/boton9"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- Botón 15 -->
+    <Button
+        android:id="@+id/boton15"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_15"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton10"
+        app:layout_constraintEnd_toStartOf="@id/boton16"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 16 -->
+    <Button
+        android:id="@+id/boton16"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_16"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton15"
+        app:layout_constraintTop_toBottomOf="@id/boton11"
+        app:layout_constraintEnd_toStartOf="@id/boton17"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 17 -->
+    <Button
+        android:id="@+id/boton17"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_17"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton16"
+        app:layout_constraintTop_toBottomOf="@id/boton12"
+        app:layout_constraintEnd_toStartOf="@id/boton18"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 18 -->
+    <Button
+        android:id="@+id/boton18"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_18"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton17"
+        app:layout_constraintTop_toBottomOf="@id/boton13"
+        app:layout_constraintEnd_toStartOf="@id/boton19"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 19 -->
+    <Button
+        android:id="@+id/boton19"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_19"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton18"
+        app:layout_constraintTop_toBottomOf="@id/boton14"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- Botón 20 -->
+    <Button
+        android:id="@+id/boton20"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_20"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton15"
+        app:layout_constraintEnd_toStartOf="@id/boton21"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 21 -->
+    <Button
+        android:id="@+id/boton21"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_21"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton20"
+        app:layout_constraintTop_toBottomOf="@id/boton16"
+        app:layout_constraintEnd_toStartOf="@id/boton22"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 22 -->
+    <Button
+        android:id="@+id/boton22"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_22"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton21"
+        app:layout_constraintTop_toBottomOf="@id/boton17"
+        app:layout_constraintEnd_toStartOf="@id/boton23"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 23 -->
+    <Button
+        android:id="@+id/boton23"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_23"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton22"
+        app:layout_constraintTop_toBottomOf="@id/boton18"
+        app:layout_constraintEnd_toStartOf="@id/boton24"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 24 -->
+    <Button
+        android:id="@+id/boton24"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_24"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton23"
+        app:layout_constraintTop_toBottomOf="@id/boton19"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- Botón 25 -->
+    <Button
+        android:id="@+id/boton25"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_25"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton20"
+        app:layout_constraintEnd_toStartOf="@id/boton26"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 26 -->
+    <Button
+        android:id="@+id/boton26"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_26"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton25"
+        app:layout_constraintTop_toBottomOf="@id/boton21"
+        app:layout_constraintEnd_toStartOf="@id/boton27"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 27 -->
+    <Button
+        android:id="@+id/boton27"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_27"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton26"
+        app:layout_constraintTop_toBottomOf="@id/boton22"
+        app:layout_constraintEnd_toStartOf="@id/boton28"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 28 -->
+    <Button
+        android:id="@+id/boton28"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_28"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton27"
+        app:layout_constraintTop_toBottomOf="@id/boton23"
+        app:layout_constraintEnd_toStartOf="@id/boton29"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 29 -->
+    <Button
+        android:id="@+id/boton29"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_29"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton28"
+        app:layout_constraintTop_toBottomOf="@id/boton24"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- Botón 30 -->
+    <Button
+        android:id="@+id/boton30"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_30"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton25"
+        app:layout_constraintEnd_toStartOf="@id/boton31"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 31 -->
+    <Button
+        android:id="@+id/boton31"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_31"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton30"
+        app:layout_constraintTop_toBottomOf="@id/boton26"
+        app:layout_constraintEnd_toStartOf="@id/boton32"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 32 -->
+    <Button
+        android:id="@+id/boton32"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_32"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton31"
+        app:layout_constraintTop_toBottomOf="@id/boton27"
+        app:layout_constraintEnd_toStartOf="@id/boton33"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 33 -->
+    <Button
+        android:id="@+id/boton33"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_negro"
+        android:text="@string/_33"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton32"
+        app:layout_constraintTop_toBottomOf="@id/boton28"
+        app:layout_constraintEnd_toStartOf="@id/boton34"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <!-- Botón 34 -->
+    <Button
+        android:id="@+id/boton34"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/boton_redondo_rojo"
+        android:text="@string/_34"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/boton33"
+        app:layout_constraintTop_toBottomOf="@id/boton29"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
+    <!-- Botón Negro -->
+    <Button
+        android:id="@+id/botonNegro"
         android:layout_width="83dp"
-        android:layout_height="52dp"
+        android:layout_height="50dp"
         android:background="@drawable/boton_redondo_negro"
-        android:text="Negro"
+        android:text="@string/negro"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="599dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/boton30"
+        app:layout_constraintEnd_toStartOf="@id/boton35"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón 35 -->
     <Button
-        android:id="@+id/button30"
+        android:id="@+id/boton35"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo_rojo"
-        android:text="34"
+        android:text="@string/_35"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="532dp" />
+        app:layout_constraintStart_toEndOf="@id/botonNegro"
+        app:layout_constraintTop_toBottomOf="@id/boton31"
+        app:layout_constraintEnd_toStartOf="@id/boton36"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón 32 -->
     <Button
-        android:id="@+id/button31"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="30"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="532dp" />
-
-    <Button
-        android:id="@+id/button32"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="32"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="532dp" />
-
-    <Button
-        android:id="@+id/button33"
+        android:id="@+id/boton36"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/boton_redondo_negro"
-        android:text="28"
+        android:text="@string/_36"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="458dp" />
+        app:layout_constraintStart_toEndOf="@id/boton35"
+        app:layout_constraintTop_toBottomOf="@id/boton32"
+        app:layout_constraintEnd_toStartOf="@id/botonRojo"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón 33 -->
     <Button
-        android:id="@+id/button34"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="26"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="458dp" />
-
-    <Button
-        android:id="@+id/button35"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="24"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="387dp" />
-
-    <Button
-        android:id="@+id/button36"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="22"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="387dp" />
-
-    <Button
-        android:id="@+id/button37"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="20"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="387dp" />
-
-    <Button
-        android:id="@+id/button38"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="18"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="319dp" />
-
-    <Button
-        android:id="@+id/button39"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="16"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="319dp" />
-
-    <Button
-        android:id="@+id/button40"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="14"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="252dp" />
-
-    <Button
-        android:id="@+id/button41"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="12"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="252dp" />
-
-    <Button
-        android:id="@+id/button42"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="10"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="252dp" />
-
-    <Button
-        android:id="@+id/button43"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="8"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="180dp" />
-
-    <Button
-        android:id="@+id/button44"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="6"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="180dp" />
-
-    <Button
-        android:id="@+id/button23"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="19"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="319dp" />
-
-    <Button
-        android:id="@+id/button25"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="7"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="180dp" />
-
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="9"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="180dp" />
-
-    <Button
-        android:id="@+id/button18"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="11"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="252dp" />
-
-    <Button
-        android:id="@+id/button19"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="13"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="252dp" />
-
-    <Button
-        android:id="@+id/button20"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="15"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="319dp" />
-
-    <Button
-        android:id="@+id/button21"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="17"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="319dp" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="21"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="387dp" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="23"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="387dp" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="25"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="458dp" />
-
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_rojo"
-        android:text="27"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="180dp"
-        tools:layout_editor_absoluteY="458dp" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="29"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="308dp"
-        tools:layout_editor_absoluteY="458dp" />
-
-    <Button
-        android:id="@+id/button16"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="31"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="532dp" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="33"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="532dp" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/boton_redondo_negro"
-        android:text="35"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="597dp" />
-
-    <Button
-        android:id="@+id/button3"
+        android:id="@+id/botonRojo"
         android:layout_width="83dp"
-        android:layout_height="53dp"
+        android:layout_height="50dp"
         android:background="@drawable/boton_redondo_rojo"
-        android:text="Rojo"
+        android:text="@string/rojo"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="599dp" />
+        app:layout_constraintStart_toEndOf="@id/boton36"
+        app:layout_constraintTop_toBottomOf="@id/boton34"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón Girar -->
     <Button
         android:id="@+id/botonGirar"
-        android:layout_width="144dp"
+        android:layout_width="wrap_content"
         android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="#0F3610"
-        android:text="Girar Ruleta"
+        android:text="@string/girar_ruleta"
         android:textColor="@color/white"
-        tools:layout_editor_absoluteX="133dp"
-        tools:layout_editor_absoluteY="698dp" />
+        android:textSize="18sp"
+        app:layout_constraintBottom_toStartOf="@id/fichas"
+        app:layout_constraintEnd_toStartOf="@id/botonSumar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/botonRestar"
+        app:layout_constraintTop_toBottomOf="@id/boton35" />
 
+    <!-- Botón Restar -->
     <Button
         android:id="@+id/botonRestar"
         android:layout_width="61dp"
         android:layout_height="63dp"
         android:backgroundTint="#0F3610"
-        android:text="-"
+        android:text="@string/Restar"
         android:textColor="@color/white"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="698dp" />
+        android:layout_marginStart="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/botonNegro"
+        app:layout_constraintEnd_toStartOf="@id/botonGirar"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintHorizontal_bias="0.0"/>
 
+    <!-- Botón Sumar -->
     <Button
         android:id="@+id/botonSumar"
         android:layout_width="61dp"
         android:layout_height="63dp"
         android:backgroundTint="#0F3610"
-        android:text="+"
+        android:text="@string/Sumar"
         android:textColor="@color/white"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="294dp"
-        tools:layout_editor_absoluteY="697dp" />
+        app:layout_constraintStart_toEndOf="@id/botonGirar"
+        app:layout_constraintTop_toBottomOf="@id/botonRojo"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintHorizontal_bias="1.0"/>
+
 
     <TextView
         android:id="@+id/fichas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fichas Disponibles:"
+        android:text="@string/fichas_disponibles"
         android:textColor="@color/white"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="797dp" />
+        app:layout_constraintTop_toBottomOf="@id/botonGirar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
