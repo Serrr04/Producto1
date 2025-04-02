@@ -114,8 +114,5 @@ class PlayActivity : AppCompatActivity() {
             .show()
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
 
 }

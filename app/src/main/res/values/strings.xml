@@ -66,6 +66,13 @@
     <string name="_5">5</string>
     <string name="_4">4</string>
     <string name="_2">2</string>
+    <string name="jugador">Jugador</string>
+    <string name="puntuacion">0</string>
+    <string name="engranaje_descripcion">Engranaje pequeño</string>
+    <string name="flecha_descripcion">Flecha hacia la izquierda</string>
+    <string name="seguro_salir">¿Estás seguro que quieres salir del juego?</string>
+    <string name="volver">Volver</string>
+    <string name="volver_a_jugar">Volver a jugar</string>
 
 
 </resources>

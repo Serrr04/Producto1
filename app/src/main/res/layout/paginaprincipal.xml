@@ -17,27 +17,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"/>
 
     <Button
         android:id="@+id/botonJugar"
         android:text="@string/btn_jugar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#0F3610"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#2B752F"
         android:textColor="#F6F6F6"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_marginTop="16dp"/>
 
     <Button
         android:id="@+id/botonOpciones"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#0F3610"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#2B752F"
         android:text="@string/btn_opciones"
         android:textColor="#F6F6F6"
         android:textSize="24sp"
@@ -45,15 +49,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/botonJugar"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_marginTop="16dp"/>
 
     <Button
         android:id="@+id/botonSalir"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#0F3610"
         android:text="@string/btn_salir"
         android:textColor="#F6F6F6"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#2B752F"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,6 +67,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/botonOpciones"
         app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_marginTop="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

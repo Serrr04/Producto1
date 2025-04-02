@@ -29,7 +29,7 @@
         android:layout_marginTop="41dp"
         android:layout_marginEnd="22dp"
         android:background="@null"
-        android:contentDescription="@null"
+        android:contentDescription="@string/engranaje_descripcion"
         android:src="@drawable/engranaje"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -37,19 +37,19 @@
 
     <ImageButton
         android:id="@+id/button_flechaAtras"
-        android:layout_width="67dp"
-        android:layout_height="26dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
         android:layout_marginStart="21dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="229dp"
         android:background="@null"
         android:backgroundTint="#00FFFFFF"
-        android:contentDescription="@null"
+        android:contentDescription="@string/flecha_descripcion"
         android:src="@drawable/flechaatras"
         app:layout_constraintEnd_toStartOf="@+id/button_engranaje"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_fichasDisponibles"

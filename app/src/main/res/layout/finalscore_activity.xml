@@ -133,16 +133,16 @@
     <EditText
         android:id="@+id/editTextLetrasNumeros"
         android:layout_width="225dp"
-        android:layout_height="wrap_content"
-        android:hint="@null"
+        android:layout_height="48dp"
+        android:hint="Nombre"
         android:inputType="text"
         android:padding="12dp"
         android:textAlignment="center"
         android:textColor="#FFFEFE"
         android:textSize="16sp"
-        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="239dp" />
+        tools:layout_editor_absoluteY="239dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button_guardar"

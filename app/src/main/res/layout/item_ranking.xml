@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:text="Jugador"
+        android:text="@string/jugador"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
@@ -21,7 +21,7 @@
         android:id="@+id/text_puntos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="@string/puntuacion"
         android:textSize="18sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />

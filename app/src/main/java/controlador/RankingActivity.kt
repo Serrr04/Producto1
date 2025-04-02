@@ -28,20 +28,30 @@ class RankingActivity : AppCompatActivity() {
 
     private fun obtenerRanking(): List<Jugador> {
         val jugadores = mutableListOf<Jugador>()
-        val cursor = database.rawQuery(
-            "SELECT * FROM Jugador ORDER BY fichasFinales DESC LIMIT 5",
+        val cursor = try {
+            database.rawQuery("SELECT * FROM Jugador ORDER BY fichasFinales DESC LIMIT 5", null)
+        } catch (e: Exception) {
+            e.printStackTrace()
             null
-        )
-
-        if (cursor.moveToFirst()) {
-            do {
-                val id = cursor.getInt(cursor.getColumnIndexOrThrow("jugadorId"))
-                val nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre"))
-                val fichasFinales = cursor.getInt(cursor.getColumnIndexOrThrow("fichasFinales"))
-                jugadores.add(Jugador(id, nombre, fichasFinales))
-            } while (cursor.moveToNext())
         }
-        cursor.close()
+
+        cursor?.use {
+            if (it.moveToFirst()) {
+                do {
+                    val id = it.getInt(it.getColumnIndexOrThrow("jugadorId"))
+                    val nombre = it.getString(it.getColumnIndexOrThrow("nombre"))
+                    val fichasFinales = it.getInt(it.getColumnIndexOrThrow("fichasFinales"))
+                    jugadores.add(Jugador(id, nombre, fichasFinales))
+                } while (it.moveToNext())
+            }
+        }
+
         return jugadores
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        database.close()
     }
 }

@@ -21,6 +21,7 @@ class QuitActivity : AppCompatActivity() {
         // Acción para volver a la pantalla anterior
         backButton.setOnClickListener {
             finish()
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
     }
 }
