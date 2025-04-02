@@ -19,7 +19,7 @@ class RankingActivity : AppCompatActivity() {
         listView = findViewById(R.id.listViewRanking)
 
         val dbHelper = DatabaseHelper(this) // poner nombre de bbdd para solucionar error
-        database = dbHelper.readableDatabase
+        database = dbHelper.db
 
         val jugadores = obtenerRanking()
         val adapter = RankingAdapter(this, jugadores)

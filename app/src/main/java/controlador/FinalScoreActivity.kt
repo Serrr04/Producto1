@@ -1,4 +1,0 @@
-package controlador
-
-class FinalScoreActivity {
-}

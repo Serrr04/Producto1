@@ -1,7 +1,10 @@
 package database
 
 import android.content.Context
+import android.database.Cursor
+import android.database.sqlite.SQLiteCursorDriver
 import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteQuery
 import androidx.room.Database as db
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -22,7 +25,7 @@ abstract class Database : RoomDatabase() {
     abstract fun ruletaDao(): RuletaDao
     abstract fun partidaDao(): PartidaDao
 
-    companion object {
+    companion object : SQLiteDatabase.CursorFactory {
         @Volatile
         private var INSTANCE: Database? = null
 
@@ -37,19 +40,23 @@ abstract class Database : RoomDatabase() {
                 instance
             }
         }
+
+        override fun newCursor(
+            p0: SQLiteDatabase?,
+            p1: SQLiteCursorDriver?,
+            p2: String?,
+            p3: SQLiteQuery?
+        ): Cursor {
+            TODO("Not yet implemented")
+        }
     }
 }
 
-class DatabaseHelper(private val context: Context) {
+class DatabaseHelper(context: Context) {
 
-    val readableDatabase: SQLiteDatabase
-        get() {
-            TODO()
-        }
-    private val db: Database = Database.getDatabase(context)
+    val db: SQLiteDatabase = SQLiteDatabase.create(Database)
 
     // Metodos CRUD
-    // Metodo Crear
     fun insertEntity(entity: Any) {
         when (entity) {
             is Apuesta -> db.apuestaDao().insertApuesta(entity)
@@ -59,18 +66,16 @@ class DatabaseHelper(private val context: Context) {
         }
     }
 
-    // Metodo para Leer
-    fun <T> getEntityById(id: Int, entityClass: Class<T>): Flowable<out Any>? {
+    fun <T> getEntityById(id: Int, entityClass: Class<T>): Any? {
         return when (entityClass) {
-            Apuesta::class.java -> db.apuestaDao().getApuestasByJugador(id) as Flowable<*>
-            Jugador::class.java -> db.jugadorDao().getJugadorById(id) as Flowable<*>
-            Ruleta::class.java -> db.ruletaDao().getRuletaById(id) as Flowable<*>
-            Partida::class.java -> db.partidaDao().getPartidaById(id) as Flowable<*>
+            Apuesta::class.java -> db.apuestaDao().getApuestasByJugador(id)
+            Jugador::class.java -> db.jugadorDao().getJugadorById(id)
+            Ruleta::class.java -> db.ruletaDao().getRuletaById(id)
+            Partida::class.java -> db.partidaDao().getPartidaById(id)
             else -> null
         }
     }
 
-    // Metodo para Actualizar
     fun updateEntity(entity: Any) {
         when (entity) {
             is Apuesta -> db.apuestaDao().updateApuesta(entity)
@@ -80,7 +85,6 @@ class DatabaseHelper(private val context: Context) {
         }
     }
 
-    // Metodo para Eliminar
     fun deleteEntity(entity: Any) {
         when (entity) {
             is Apuesta -> db.apuestaDao().deleteApuesta(entity)
@@ -94,5 +98,5 @@ class DatabaseHelper(private val context: Context) {
     fun getApuestasPorColor(jugadorId: Int, color: String): Flowable<Int> {
         return db.apuestaDao().getApuestasPorColor(jugadorId, color)
     }
-
 }
+

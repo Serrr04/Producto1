@@ -41,7 +41,7 @@ class ApuestaController(private val dbHelper: DatabaseHelper) {
     }
 
     // Verificar si el jugador ya apostó por un número
-    fun verificarApuestasPorNumero(jugadorId: Int, numero: Int): Flowable<out Any> {
+    fun verificarApuestasPorNumero(jugadorId: Int, numero: Int): Any {
         return dbHelper.getEntityById(jugadorId, Apuesta::class.java)?.let {
             // Agregar la lógica para verificar si la apuesta ya existe, según sea necesario
             it
@@ -49,7 +49,7 @@ class ApuestaController(private val dbHelper: DatabaseHelper) {
     }
 
     // Obtener el total de fichas apostadas por un jugador
-    fun obtenerTotalFichasApostadas(jugadorId: Int): Flowable<out Any> {
+    fun obtenerTotalFichasApostadas(jugadorId: Int): Any {
         return dbHelper.getEntityById(jugadorId, Apuesta::class.java)?.let {
             // Realizar la suma de todas las apuestas realizadas por el jugador
             it

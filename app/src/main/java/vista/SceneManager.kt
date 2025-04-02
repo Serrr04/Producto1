@@ -2,13 +2,17 @@ package vista
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
+import controlador.OptionsActivity
+import controlador.PlayActivity
+import controlador.QuitActivity
 
 object SceneManager {
 
     fun loadScene(context: Context, sceneName: String) {
         val sceneClass = when (sceneName) {
-            "Ruleta" -> vistaRuleta::class.java
-            "Opciones" -> vistaOpciones::class.java
+            "Ruleta" -> PlayActivity::class.java
+            "Opciones" -> OptionsActivity::class.java
+            "Salir" -> QuitActivity::class.java
             else -> null  // Manejo de errores si la escena no existe
         }
 

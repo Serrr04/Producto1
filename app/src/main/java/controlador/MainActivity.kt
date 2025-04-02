@@ -15,13 +15,15 @@ class MainActivity : AppCompatActivity() {
         val optionsButton: Button = findViewById(R.id.botonOpciones)
         val quitButton: Button = findViewById(R.id.botonSalir)
 
+
         playButton.setOnClickListener {
             val intent = Intent(this, PlayActivity::class.java)
             startActivity(intent)
         }
 
         optionsButton.setOnClickListener {
-            setContentView(R.layout.opciones)
+            val intent = Intent(this, OptionsActivity::class.java)
+            startActivity(intent)
         }
 
         quitButton.setOnClickListener {

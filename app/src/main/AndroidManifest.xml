@@ -23,9 +23,11 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="controlador.PlayActivity"
-            android:theme="@style/Theme.AppCompat"/>
+        <activity android:name="controlador.PlayActivity" />
+        <activity android:name="controlador.OptionsActivity" />
+        <activity android:name="controlador.QuitActivity" />
+        <activity android:name="controlador.RankingActivity" />
+
 
     </application>
 

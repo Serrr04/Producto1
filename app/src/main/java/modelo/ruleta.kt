@@ -7,15 +7,17 @@ import io.reactivex.rxjava3.core.Flowable
 data class Ruleta(
     @PrimaryKey(autoGenerate = true)
     val ruletaId: Int = 0,
-    val numero: Int
+    val numero: Int,
+    val color: String = "desconocido"
 ) {
-    // Método para asignar el color a los números: rojo = impar, negro = par, 0 = verde
-    val color: String
-        get() = when (numero) {
+    // Metodo para asignar el color a los números: rojo = impar, negro = par, 0 = verde
+    fun calcularColor(): String {
+        return when (numero) {
             0 -> "verde"
             in 1..36 -> if (numero % 2 == 0) "negro" else "rojo"
             else -> "desconocido" // En caso de error
         }
+    }
 }
 
 @Dao

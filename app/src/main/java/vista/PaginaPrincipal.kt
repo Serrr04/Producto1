@@ -2,10 +2,10 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.producto1.R
+import controlador.PlayActivity
+import controlador.QuitActivity
 import modelo.Ruleta
 import vista.SceneManager
-import vista.vistaOpciones
-import vista.vistaRuleta
 
 class PaginaPrincipal : AppCompatActivity() {
 
@@ -23,9 +23,9 @@ class PaginaPrincipal : AppCompatActivity() {
         botones.forEach { boton ->
             boton.setOnClickListener { view ->
                 when (view.id) {
-                    R.id.botonJugar -> SceneManager.loadScene(this, "Ruleta")
+                    R.id.botonJugar -> PlayActivity::class.java
                     R.id.botonOpciones -> SceneManager.loadScene(this, "Opciones")
-                    R.id.botonSalir -> finish()
+                    R.id.botonSalir -> QuitActivity::class.java
                 }
             }
         }
