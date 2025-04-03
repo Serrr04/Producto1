@@ -1,4 +1,4 @@
-package controlador
+package vista
 
 import android.os.Bundle
 import android.widget.Button
@@ -21,7 +21,7 @@ class QuitActivity : AppCompatActivity() {
         // Acción para volver a la pantalla anterior
         backButton.setOnClickListener {
             finish()
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+//            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
         }
     }
 }

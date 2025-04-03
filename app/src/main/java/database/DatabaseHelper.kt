@@ -1,62 +1,44 @@
 package database
 
 import android.content.Context
-import android.database.Cursor
-import android.database.sqlite.SQLiteCursorDriver
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteQuery
-import androidx.room.Database as db
+import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import io.reactivex.rxjava3.core.Flowable
-import modelo.Apuesta
-import modelo.ApuestaDao
-import modelo.Jugador
-import modelo.JugadorDao
-import modelo.Ruleta
-import modelo.RuletaDao
-import modelo.Partida
-import modelo.PartidaDao
+import modelo.*
 
-@db(entities = [Apuesta::class, Jugador::class, Ruleta::class, Partida::class], version = 1)
-abstract class Database : RoomDatabase() {
+// Definir la base de datos con Room
+@Database(entities = [Apuesta::class, Jugador::class, Ruleta::class, Partida::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
     abstract fun apuestaDao(): ApuestaDao
     abstract fun jugadorDao(): JugadorDao
     abstract fun ruletaDao(): RuletaDao
     abstract fun partidaDao(): PartidaDao
 
-    companion object : SQLiteDatabase.CursorFactory {
+    companion object {
         @Volatile
-        private var INSTANCE: Database? = null
+        private var INSTANCE: AppDatabase? = null
 
-        fun getDatabase(context: Context): Database {
+        fun getDatabase(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    Database::class.java,
+                    AppDatabase::class.java,
                     "BBDDRuleta"
                 ).build()
                 INSTANCE = instance
                 instance
             }
         }
-
-        override fun newCursor(
-            p0: SQLiteDatabase?,
-            p1: SQLiteCursorDriver?,
-            p2: String?,
-            p3: SQLiteQuery?
-        ): Cursor {
-            TODO("Not yet implemented")
-        }
     }
 }
 
+// Clase para manejar la base de datos
 class DatabaseHelper(context: Context) {
 
-    val db: SQLiteDatabase = SQLiteDatabase.create(Database)
+    private val db: AppDatabase = AppDatabase.getDatabase(context)
 
-    // Metodos CRUD
+    // Métodos CRUD
     fun insertEntity(entity: Any) {
         when (entity) {
             is Apuesta -> db.apuestaDao().insertApuesta(entity)
@@ -94,9 +76,8 @@ class DatabaseHelper(context: Context) {
         }
     }
 
-    // Metodos adicionales para consultas
+    // Métodos adicionales para consultas
     fun getApuestasPorColor(jugadorId: Int, color: String): Flowable<Int> {
         return db.apuestaDao().getApuestasPorColor(jugadorId, color)
     }
 }
-

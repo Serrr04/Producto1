@@ -12,7 +12,6 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -23,5 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Producto1"
 include(":app")
-include(":app")
- 
+

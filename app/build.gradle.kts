@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("org.jetbrains.kotlin.kapt")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -64,4 +64,10 @@ dependencies {
 //    implementation(libs.slf4j.simple)
     implementation(libs.androidx.room.ktx)
     implementation(libs.rxjava)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.rxjava3)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.appcompat.v130)
+    implementation(libs.androidx.core.ktx.v160)
 }

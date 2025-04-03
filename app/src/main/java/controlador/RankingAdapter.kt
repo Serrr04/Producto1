@@ -18,27 +18,15 @@ class RankingAdapter(private val context: Context, private val jugadores: List<J
     override fun getItemId(position: Int): Long = position.toLong()
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val viewHolder: ViewHolder
-        val view: View
+        val view: View = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_ranking, parent, false)
 
-        if (convertView == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.item_ranking, parent, false)
-            viewHolder = ViewHolder(view)
-            view.tag = viewHolder
-        } else {
-            view = convertView
-            viewHolder = view.tag as ViewHolder
-        }
+        val textNombre = view.findViewById<TextView>(R.id.text_nombre)
+        val textPuntos = view.findViewById<TextView>(R.id.text_puntos)
 
         val jugador = jugadores[position]
-        viewHolder.textNombre.text = jugador.nombre
-        viewHolder.textPuntos.text = jugador.fichasFinales.toString()
+        textNombre.text = jugador.nombre
+        textPuntos.text = jugador.fichasFinales.toString()
 
         return view
-    }
-
-    private class ViewHolder(view: View) {
-        val textNombre: TextView = view.findViewById(R.id.text_nombre)
-        val textPuntos: TextView = view.findViewById(R.id.text_puntos)
     }
 }

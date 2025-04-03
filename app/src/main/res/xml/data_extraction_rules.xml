@@ -5,15 +5,15 @@
 -->
 <data-extraction-rules>
     <cloud-backup>
-        <!-- TODO: Use <include> and <exclude> to control what is backed up.
-        <include .../>
-        <exclude .../>
-        -->
+        <!-- Incluir la base de datos en la copia de seguridad -->
+        <include domain="database" path="BBDDRuleta"/>
+        <!-- Incluir las preferencias compartidas -->
+        <include domain="sharedpref" path="*.xml"/>
     </cloud-backup>
-    <!--
+
     <device-transfer>
-        <include .../>
-        <exclude .../>
+        <!-- Transferir configuraciones y base de datos al cambiar de dispositivo -->
+        <include domain="device_database" path="BBDDRuleta"/>
+        <include domain="device_sharedpref" path="*.xml"/>
     </device-transfer>
-    -->
 </data-extraction-rules>
