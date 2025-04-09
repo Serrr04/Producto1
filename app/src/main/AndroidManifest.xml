@@ -26,7 +26,7 @@
         <activity android:name="vista.PlayActivity" />
         <activity android:name="controlador.OptionsActivity" />
         <activity android:name="vista.QuitActivity" />
-        <activity android:name="controlador.RankingActivity" />
+        <activity android:name="vista.RankingActivity" />
 
 
     </application>
